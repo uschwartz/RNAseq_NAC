@@ -92,17 +92,16 @@ workflow{
                         align(trim_pe.out[0].combine(idx_ch),gtf_ch, gsize_ch)
 
                         multiqc_final(fastqc.out[0].mix(trim_pe.out[1])
-                        .mix(trim_pe.out[2]).mix(align.out[1])
+                        .mix(trim_pe.out[2]).mix(align.out[1]).mix(align.out[2])
+                        .mix(align.out[3]).collect())
+                } else {
+                        align(fastq2align.combine(idx_ch),gtf_ch, gsize_ch)
+
+                        multiqc_final(fastqc.out[0].mix(align.out[1])
+                        .mix(align.out[2])
                         .mix(align.out[3]).collect())
 
-//align.out[2].collect().view()
                 }
-
-        } else {
-                align(fastq2align.combine(idx_ch), gsize_ch)
-
-                //multiqc_final(fastqc.out[0]
-                //        .mix(align.out[1]).mix(align.out[2]).collect())
         }
 
 

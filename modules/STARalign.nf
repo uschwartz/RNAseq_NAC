@@ -21,7 +21,7 @@ process star{
                 --alignIntronMin 20 \\
                 --alignIntronMax 1000000 \\
                 --outFilterMismatchNoverReadLmax 0.04 \\
-                --runThreadN 8 \\
+                --runThreadN $task.cpus \\
                 --outSAMtype BAM SortedByCoordinate \\
                 --outWigType wiggle \\
                 --outSAMmultNmax 1 \\

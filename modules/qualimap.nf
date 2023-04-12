@@ -7,7 +7,7 @@ process qualimap{
 	tuple val(nameID), file(bam_file),file(bam_idx), path(gtf)
 
 	output:
-        path("${nameID}/*", type: 'dir')
+        file "${nameID}"
 
         script:
         pairedOpt = ( params.pairedEnd ? '-pe':'')
