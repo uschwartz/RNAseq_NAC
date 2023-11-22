@@ -28,7 +28,8 @@ process star{
                 --outMultimapperOrder Random  $readFilesCmd \\
                 --genomeDir $params.STARidxPath \\
                 --readFilesIn  $reads \\
-                --outFileNamePrefix $nameID"_"
+                --outFileNamePrefix $nameID"_" \\
+                --limitBAMsortRAM ${task.memory.bytes}
 
 
           """

@@ -85,7 +85,7 @@ workflow{
         fastqc(fastq_files)
         multiqc_raw(fastqc.out[0].collect())
 
-        if(params.pairedEnd){
+        //if(params.pairedEnd){
                 if(params.trim){
                         trim_pe(fastq2align)
 
@@ -102,7 +102,7 @@ workflow{
                         .mix(align.out[3]).collect())
 
                 }
-        }
+        //}
 
 
 
