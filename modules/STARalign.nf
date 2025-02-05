@@ -12,6 +12,7 @@ process star{
 
           script:
           readFilesCmd=(params.testRUN & !params.trim ? '' :"--readFilesCommand $params.zipSTAR -c")
+          stranded = ( params.strandness=="unstranded" ? '--outWigStrand Unstranded':'')
           """
           STAR --outFilterType BySJout \\
                 --outFilterMultimapNmax 20 \\
@@ -23,7 +24,7 @@ process star{
                 --outFilterMismatchNoverReadLmax 0.04 \\
                 --runThreadN $task.cpus \\
                 --outSAMtype BAM SortedByCoordinate \\
-                --outWigType wiggle \\
+                --outWigType wiggle $stranded \\
                 --outSAMmultNmax 1 \\
                 --outMultimapperOrder Random  $readFilesCmd \\
                 --genomeDir $params.STARidxPath \\

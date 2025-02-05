@@ -14,9 +14,10 @@ process trimGalore_pe{
         tuple val(sampleID), file("*_fastqc.zip")
 
         script:
+        pairedOpt = ( params.pairedEnd ? '--paired':'')
         """
         trim_galore --gzip \
-         --paired \
+         $pairedOpt \
          --cores $task.cpus \
          --fastqc \
          -q 1 \
