@@ -86,8 +86,8 @@ MultiQC (Final Comprehensive Report)
 ### Reference Data Required
 - **STAR genome index**: Pre-built STAR index for your organism
 - **GTF annotation file**: Gene annotation in GTF format
-  - --gtfFile "GTF" | GTF file name for read counting (default `protein_coding.gtf`). Should be placed in --gtfPath
-  - GTF file consisting only of protein-coding genes named `protein_coding.gtf` is required to be present in --gtfPath, as it is used for qualimap and dupRadar. See script `get_geneCoding_from_gtf.R` to generate one.
+  - `--gtfFile` "GTF" | GTF file name for read counting (default `protein_coding.gtf`). Should be placed in `--gtfPath`
+  - GTF file consisting only of protein-coding genes named `protein_coding.gtf` is required to be present in `--gtfPath`, as it is used for qualimap and dupRadar. See script `get_geneCoding_from_gtf.R` to generate one.
 
 ## Installation
 
@@ -351,5 +351,5 @@ For bug reports and feature requests, please use the [GitHub Issues](https://git
 
 ---
 
-**Version:** 2.0.0  
+**Version:** 2.1
 **Last Updated:** February 2026
